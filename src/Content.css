@@ -1,0 +1,26 @@
+.Content{
+    align-items: center;
+    padding-top: 50px;
+}
+.Content-main{
+    margin-top: 50px;
+    align-items: center;
+    padding: 20px;
+}
+#title{
+    font-family: 'Shippori Mincho', serif;
+    font-size: 1.7em;
+    font-weight: 500;
+}
+#whatIf{
+    font-size: 1.2em;
+    background: -webkit-linear-gradient(#000, darkkhaki,#fff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: 'Monoton', cursive;
+}
+p{
+    font-family: 'EB Garamond', serif;
+    font-weight: 500;
+    font-size: 1.3em;
+}

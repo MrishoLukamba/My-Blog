@@ -1,0 +1,16 @@
+#me{
+    height: 25vh;
+    width: 10vw;
+    margin-bottom: 10px;
+    object-fit:cover;
+    border-bottom: 2px solid whitesmoke;
+    border-top: 2px solid whitesmoke;
+    border-left: 2px solid darkkhaki;
+    border-right: 2px solid darkkhaki;
+
+}
+
+h5{
+    font-weight: 500;
+    color: gray;
+}
