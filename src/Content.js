@@ -1,13 +1,9 @@
 import React,{useState,useEffect} from 'react'
 import './Content.css'
-import {
-    BrowserRouter as Router,
-    Switch,
-    Route
-} from 'react-router-dom';
 
 
-function Content() {
+
+function Content({show}) {
     const [newblog, setNewblog]= useState({});
     const [blog, setBlog] = useState([]);
 
@@ -30,28 +26,26 @@ function Content() {
                  <p>{blog[0]?.body}</p>
 
              </div>
-             <Router>
-                 <Switch>
-                     <Route path="/edit">
-                        <div>
+             {show && (
+                 <div>
                             
-                            <form onSubmit={update}>
-                                <textarea
-                                    value={newblog.title || ""}
-                                    name='title'
-                                    onChange={handleChange}
-                                    />
-                                <textarea
-                                value={newblog.body || ""}
-                                name='body'
-                                onChange={handleChange}
-                                />
-                                <button type='submit'>Post</button>
-                            </form>
-                        </div>
-                        </Route>
-                </Switch>
-             </Router>
+                 <form onSubmit={update}>
+                     <textarea
+                         value={newblog.title || ""}
+                         name='title'
+                         onChange={handleChange}
+                         />
+                     <textarea
+                     value={newblog.body || ""}
+                     name='body'
+                     onChange={handleChange}
+                     />
+                     <button type='submit'>Post</button>
+                 </form>
+             </div>
+             )}
+                        
+                     
 
         </div>
     )

@@ -6,12 +6,17 @@ import Profile from './Profile';
 import Content from './Content';
 import TwitterIcon from '@material-ui/icons/Twitter';
 import FacebookIcon from '@material-ui/icons/Facebook';
+import { useHistory } from 'react-router-dom';
 
 
 function Body() {
     const [comments, setComments] = useState([]);
-    const [newComment, setNewComment] = useState('')
-
+    const [newComment, setNewComment] = useState('');
+    const [show , setShow] = useState(false);
+    
+    const toggle=()=>{
+      show? setShow(false): setShow(true)
+    }
 
     const handleChange=({target})=>{
         setNewComment(target.value)
@@ -23,6 +28,7 @@ function Body() {
         setComments((prev)=> [newComment,...prev ])
         setNewComment('')
     }
+    console.log(show)
     return (
         <div className='Body'>
           <div className='Body-1'>
@@ -35,7 +41,7 @@ function Body() {
             </div>
 
             <div className='Body-middle'>
-                <Content/>       
+                <Content show={show}/>       
             </div>
 
             <div className='Body-right'>
@@ -55,7 +61,7 @@ function Body() {
                 <TwitterIcon/>
                 <FacebookIcon/>
                 </div>
-                <span>Mrisho Lukamba ©2021 </span>
+                <span onClick={toggle}>Mrisho Lukamba ©2021 </span>
             </footer>
           </div>
         </div>
